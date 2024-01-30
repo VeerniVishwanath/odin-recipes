@@ -81,3 +81,21 @@ function playRound() {
     scores[0]++;
   }
 }
+
+function playGame() {
+  for (let i = 0; i < 5; i++) {
+    playRound();
+  }
+
+  if (scores[1] > scores[0]) {
+    console.log(
+      `You Won!!!😁 \nScores \n1. Player = ${scores[1]} \n2. Computer = ${scores[0]}`
+    );
+  } else if (scores[0] > scores[1]) {
+    console.log(
+      `You Lost to Computer😿. \nScores \n1. Player = ${scores[1]} \n2. Computer = ${scores[0]}`
+    );
+  }
+}
+
+console.log(`\nRun playGame() to start the Game`);
