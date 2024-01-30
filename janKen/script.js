@@ -21,3 +21,22 @@ console.log(`1. Rules are same as the English version.
 3. You'll play a five round game against the computer. 
 4. Refresh the page to reset the game.`);
 console.groupEnd();
+
+//Game
+let scores = [0, 0];
+
+function getComputerChoice() {
+  let value = parseInt(Math.random() * 3);
+
+  if (value == 0) {
+    return "guu";
+  } else if (value == 1) {
+    return "paa";
+  } else {
+    return "choki";
+  }
+}
+
+function getPlayerSelection() {
+  return prompt(`Saisho wa guu (Starting with stone) \n Janken pon! `);
+}
