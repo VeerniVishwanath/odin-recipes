@@ -1,0 +1,203 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #4fa85a;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 100dvh;
+  max-width: 100dvw;
+  padding: 0 2%;
+}
+
+/* Playable Buttons */
+.playable-btns {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.playable-btns div {
+  background-color: #4d5e6d;
+  border: 6px solid black;
+  border-radius: 50%;
+  padding: 10px 30px;
+}
+
+.playable-btns img {
+  height: 130px;
+  transform: rotate(0.75turn);
+}
+
+/* Sticky menu */
+.sticky-menu {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-size: large;
+  font-weight: bolder;
+  height: 100dvh;
+  justify-content: space-between;
+  left: calc(50% - 75px);
+  position: absolute;
+}
+
+.score .dot {
+  border-radius: 50%;
+  background-color: black;
+  height: 5px;
+  margin: 0 0.5rem;
+  width: 5px;
+}
+
+.comp-score {
+  color: rgb(50, 174, 223);
+}
+
+.player-score {
+  color: tomato;
+}
+
+.hidden {
+  display: none;
+}
+
+.score,
+.start-stop-btns {
+  align-items: center;
+  background-color: white;
+  display: flex;
+  height: 56px;
+  justify-content: center;
+  width: 120px;
+}
+
+.score {
+  border-radius: 0 0 100px 100px;
+  padding-bottom: 10px;
+}
+.start-stop-btns {
+  border-radius: 100px 100px 0 0;
+  padding-top: 10px;
+  color: rgba(0, 0, 0, 0.816);
+}
+
+/* Hands */
+.hands-container {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: calc(50% - 200px);
+  width: 100dvw;
+  z-index: -1;
+}
+
+.hands-container img {
+  height: 400px;
+}
+.hands-container .comp-hands img {
+  transform: rotate(90deg);
+}
+.hands-container .player-hands img {
+  transform: rotate(-90deg);
+}
+
+.hands-container .arm {
+  width: calc(100vw / 4);
+  height: 70px;
+  border: 0.25rem solid black;
+  border-left: 0;
+  border-right: 0;
+}
+
+.comp-hands,
+.player-hands {
+  display: flex;
+  align-items: center;
+}
+
+.comp-hands .arm {
+  background-color: cornflowerblue;
+  margin-top: 10%;
+}
+
+.player-hands .arm {
+  background-color: tomato;
+  margin-bottom: 10%;
+}
+
+.player-hands {
+  margin-top: 2%;
+}
+
+.comp-hands {
+  margin-bottom: 2%;
+}
+
+.animate-up {
+  animation: moveUp 0.5s ease infinite alternate;
+  transform-origin: left bottom; /* Set the pivot point to the left bottom */
+}
+
+.animate-down {
+  animation: moveDown 0.5s ease infinite alternate;
+  transform-origin: right top; /* Set the pivot point to the left bottom */
+}
+
+@keyframes moveUp {
+  0% {
+    transform: rotate(0deg) translateY(0); /* Start position */
+  }
+  100% {
+    transform: rotate(-10deg) translateY(-20px); /* End position */
+  }
+}
+
+@keyframes moveDown {
+  0% {
+    transform: rotate(-10deg) translateY(-20px); /* End position */
+  }
+  100% {
+    transform: rotate(0deg) translateY(0); /* Start position */
+  }
+}
+
+/* Info Container */
+.info-container {
+  align-items: center;
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.524);
+  display: flex;
+  font-weight: bolder;
+  font-size: 60px;
+  height: 300px;
+  justify-content: center;
+  left: calc(50% - 100px);
+  position: absolute;
+  top: calc(50% - 150px);
+  text-align: center;
+  width: 200px;
+}
+
+/* Announcement */
+.announcement-container {
+  align-items: center;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.574);
+  display: flex;
+  font-size: 70px;
+  font-weight: bolder;
+  height: 200px;
+  justify-content: center;
+  left: calc(50% - 350px);
+  position: absolute;
+  top: calc(25% - 150px);
+  text-align: center;
+  width: 700px;
+}
